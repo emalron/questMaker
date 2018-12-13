@@ -1,0 +1,10 @@
+C:\Users\Emalron\Documents\Visual Studio 2017\Projects\tileMaker_test\tileMaker_test\bin\Debug\tileMaker_test.exe.config
+C:\Users\Emalron\Documents\Visual Studio 2017\Projects\tileMaker_test\tileMaker_test\bin\Debug\tileMaker_test.exe
+C:\Users\Emalron\Documents\Visual Studio 2017\Projects\tileMaker_test\tileMaker_test\bin\Debug\tileMaker_test.pdb
+C:\Users\Emalron\Documents\Visual Studio 2017\Projects\tileMaker_test\tileMaker_test\obj\Debug\tileMaker_test.csprojAssemblyReference.cache
+C:\Users\Emalron\Documents\Visual Studio 2017\Projects\tileMaker_test\tileMaker_test\obj\Debug\tileMaker_test.Form1.resources
+C:\Users\Emalron\Documents\Visual Studio 2017\Projects\tileMaker_test\tileMaker_test\obj\Debug\tileMaker_test.Properties.Resources.resources
+C:\Users\Emalron\Documents\Visual Studio 2017\Projects\tileMaker_test\tileMaker_test\obj\Debug\tileMaker_test.csproj.GenerateResource.cache
+C:\Users\Emalron\Documents\Visual Studio 2017\Projects\tileMaker_test\tileMaker_test\obj\Debug\tileMaker_test.csproj.CoreCompileInputs.cache
+C:\Users\Emalron\Documents\Visual Studio 2017\Projects\tileMaker_test\tileMaker_test\obj\Debug\tileMaker_test.exe
+C:\Users\Emalron\Documents\Visual Studio 2017\Projects\tileMaker_test\tileMaker_test\obj\Debug\tileMaker_test.pdb
