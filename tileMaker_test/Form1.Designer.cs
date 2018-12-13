@@ -34,14 +34,16 @@
             this.btnTileMake = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.tbQstName = new System.Windows.Forms.TextBox();
-            this.tbQstDesc = new System.Windows.Forms.TextBox();
+            this.tbAreaName = new System.Windows.Forms.TextBox();
+            this.tbAreaDesc = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBoxTiles = new System.Windows.Forms.ListBox();
+            this.btnAddArea = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.listBoxAreas = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericResolution)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -110,14 +112,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(12, 36);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(376, 56);
-            this.listView1.TabIndex = 6;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -136,20 +130,20 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Area Name";
             // 
-            // tbQstName
+            // tbAreaName
             // 
-            this.tbQstName.Location = new System.Drawing.Point(12, 117);
-            this.tbQstName.Name = "tbQstName";
-            this.tbQstName.Size = new System.Drawing.Size(376, 25);
-            this.tbQstName.TabIndex = 9;
+            this.tbAreaName.Location = new System.Drawing.Point(12, 117);
+            this.tbAreaName.Name = "tbAreaName";
+            this.tbAreaName.Size = new System.Drawing.Size(376, 25);
+            this.tbAreaName.TabIndex = 9;
             // 
-            // tbQstDesc
+            // tbAreaDesc
             // 
-            this.tbQstDesc.Location = new System.Drawing.Point(12, 169);
-            this.tbQstDesc.Multiline = true;
-            this.tbQstDesc.Name = "tbQstDesc";
-            this.tbQstDesc.Size = new System.Drawing.Size(376, 98);
-            this.tbQstDesc.TabIndex = 11;
+            this.tbAreaDesc.Location = new System.Drawing.Point(12, 169);
+            this.tbAreaDesc.Multiline = true;
+            this.tbAreaDesc.Name = "tbAreaDesc";
+            this.tbAreaDesc.Size = new System.Drawing.Size(376, 98);
+            this.tbAreaDesc.TabIndex = 11;
             // 
             // label5
             // 
@@ -169,28 +163,60 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "Selected Tile(s)";
             // 
-            // listBox1
+            // listBoxTiles
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(12, 320);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(376, 214);
-            this.listBox1.TabIndex = 14;
+            this.listBoxTiles.FormattingEnabled = true;
+            this.listBoxTiles.ItemHeight = 15;
+            this.listBoxTiles.Location = new System.Drawing.Point(12, 320);
+            this.listBoxTiles.Name = "listBoxTiles";
+            this.listBoxTiles.Size = new System.Drawing.Size(376, 214);
+            this.listBoxTiles.TabIndex = 14;
+            // 
+            // btnAddArea
+            // 
+            this.btnAddArea.Location = new System.Drawing.Point(15, 556);
+            this.btnAddArea.Name = "btnAddArea";
+            this.btnAddArea.Size = new System.Drawing.Size(75, 23);
+            this.btnAddArea.TabIndex = 15;
+            this.btnAddArea.Text = "Add Area";
+            this.btnAddArea.UseVisualStyleBackColor = true;
+            this.btnAddArea.Click += new System.EventHandler(this.btnAddArea_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Red;
+            this.label7.Location = new System.Drawing.Point(96, 560);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(15, 15);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "-";
+            // 
+            // listBoxAreas
+            // 
+            this.listBoxAreas.FormattingEnabled = true;
+            this.listBoxAreas.ItemHeight = 15;
+            this.listBoxAreas.Location = new System.Drawing.Point(12, 38);
+            this.listBoxAreas.Name = "listBoxAreas";
+            this.listBoxAreas.Size = new System.Drawing.Size(376, 49);
+            this.listBoxAreas.TabIndex = 17;
+            this.listBoxAreas.SelectedIndexChanged += new System.EventHandler(this.listBoxAreas_SelectedIndexChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1093, 636);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.listBoxAreas);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.btnAddArea);
+            this.Controls.Add(this.listBoxTiles);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.tbQstDesc);
+            this.Controls.Add(this.tbAreaDesc);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.tbQstName);
+            this.Controls.Add(this.tbAreaName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnTileMake);
@@ -214,14 +240,16 @@
         private System.Windows.Forms.Button btnTileMake;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tbQstName;
-        private System.Windows.Forms.TextBox tbQstDesc;
+        private System.Windows.Forms.TextBox tbAreaName;
+        private System.Windows.Forms.TextBox tbAreaDesc;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBoxTiles;
+        private System.Windows.Forms.Button btnAddArea;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ListBox listBoxAreas;
     }
 }
 

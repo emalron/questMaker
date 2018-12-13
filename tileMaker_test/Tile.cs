@@ -16,7 +16,12 @@ namespace tileMaker_test
             m_rgb = new float[3];
         }
 
-        private int m_width;
+        private int m_width, m_height, m_id;
+        private Bitmap m_tileImage;
+        private Point m_position;
+        private bool m_selected;
+        private float[] m_rgb;
+
         public int Width
         {
             get
@@ -29,7 +34,6 @@ namespace tileMaker_test
             }
         }
 
-        private int m_height;
         public int Height
         {
             get
@@ -41,8 +45,7 @@ namespace tileMaker_test
                 m_height = value;
             }
         }
-
-        private Bitmap m_tileImage;
+        
         public Bitmap TileImage
         {
             get
@@ -59,7 +62,6 @@ namespace tileMaker_test
             }
         }
 
-        private int m_id;
         public int Id
         {
             get
@@ -71,8 +73,7 @@ namespace tileMaker_test
                 m_id = value;
             }
         }
-
-        private Point m_position;
+        
         public Point Position
         {
             get
@@ -84,8 +85,7 @@ namespace tileMaker_test
                 m_position = value;
             }
         }
-
-        private bool m_selected;
+        
         public bool Selected
         {
             get
@@ -94,7 +94,7 @@ namespace tileMaker_test
             }
         }
 
-        private float[] m_rgb;
+        
         public float[] RGB
         {
             get

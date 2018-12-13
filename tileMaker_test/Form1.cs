@@ -22,13 +22,18 @@ namespace tileMaker_test
         Bitmap m_map;
         List<Tile> m_tiles;
         List<Tile> m_selectedTiles;
+        List<Area> m_areas;
 
         void init()
         {
-            m_tiles = new List<Tile>();
             m_selectedTiles = new List<Tile>();
+            m_areas = new List<Area>();
 
-            listBox1.DataSource = m_selectedTiles;
+            listBoxAreas.DataSource = m_areas;
+            listBoxAreas.DisplayMember = "Name";
+
+            listBoxTiles.DataSource = m_selectedTiles;
+            listBoxTiles.DisplayMember = "Id";
         }
 
         private void btnLoadImage_Click(object sender, EventArgs e)
@@ -166,6 +171,7 @@ namespace tileMaker_test
 
         private void btnTileMake_Click(object sender, EventArgs e)
         {
+            m_tiles = new List<Tile>();
             int res_ = Convert.ToInt32(numericResolution.Value);
 
             if(sliceMap(m_map, res_, ref m_tiles))
@@ -221,13 +227,50 @@ namespace tileMaker_test
             }
 
             m_selectedTiles = output;
-            updateListTiles();
+            updateListBox(listBoxTiles, m_selectedTiles, "Id");
         }
 
-        void updateListTiles()
+        void updateListBox<T>(Control c, List<T> list, string displayMember)
         {
-            listBox1.DataSource = null;
-            listBox1.DataSource = m_selectedTiles;
+            ListBox c_ = c as ListBox;
+
+            c_.DataSource = null;
+            c_.DataSource = list;
+            c_.DisplayMember = displayMember;
+        }
+
+        private void btnAddArea_Click(object sender, EventArgs e)
+        {
+            if (tbAreaName.Text == String.Empty) return;
+            if (tbAreaDesc.Text == String.Empty) return;
+            if (listBoxTiles.Items.Count == 0) return;
+
+            m_areas.Add(new Area(m_selectedTiles, tbAreaName.Text, tbAreaDesc.Text));
+            updateListBox(listBoxAreas, m_areas, "Name");
+        }
+
+        private void listBoxAreas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Area area_ = listBoxAreas.SelectedItem as Area;
+
+            tbAreaName.Text = area_.Name;
+            tbAreaDesc.Text = area_.Description;
+
+            foreach(Tile t in m_tiles)
+            {
+                if(t.Selected)
+                {
+                    t.select();
+                }
+            }
+           
+            foreach(Tile t in area_.Tiles)
+            {
+                m_tiles[t.Id].select();
+            }
+            
+
+            showMap(m_tiles);
         }
     }
 }
